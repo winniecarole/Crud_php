@@ -1,5 +1,6 @@
 <?php
  if(isset($_POST['create'])){ //püft ob create existiert
+     include "../db_conn.php";
      function validteuser($data){
          $data=trim($data);
          $data=stripcslashes($data); //die zu entschlüsselnde Zeichenkette
@@ -23,7 +24,13 @@
      }else if (empty($email)) {
          header("Location: ../index.php?error=Email is required&$user_data");
      }else{
-         echo "okay";
+         $sql = "INSERT INTO users(name, vorname, email ,password)VALUES('$name','$vorName' ,'$email','$password')";
+         $result = mysqli_query($conn, $sql);
+         if ($result) {
+             header("Location: ../read.php?success=successfully created");
+         }else {
+             header("Location: ../index.php?error=unknown error occurred&$user_data");
+         }
      }
 
 
