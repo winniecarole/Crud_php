@@ -10,7 +10,7 @@
 </head>
 <body>
 <div class="container">
-    <form action="php/create.php" method="post">
+    <form action="php/update.php" method="post">
 
         <h4 class="display-4 text-center">Update</h4><hr><br>
         <?php if (isset($_GET['error'])) { ?>
@@ -25,8 +25,7 @@
                    class="form-control"
                    id="name"
                    name="name"
-                   value="<?php if(isset($_GET['name']))
-                       echo($_GET['name']); ?>"
+                   value="<?$row['name'] ?>"
                   >
         </div>
         <div class="form-group">
@@ -35,8 +34,7 @@
                    class="form-control"
                    id="vorname"
                    name="vorname"
-                   value="<?php if(isset($_GET['vorname']))
-                       echo($_GET['vorname']); ?>"
+                   value="<?$row['vorname'] ?>"
                   >
         </div>
 
@@ -46,8 +44,7 @@
                    class="form-control"
                    id="email"
                    name="email"
-                   value="<?php if(isset($_GET['email']))
-                       echo($_GET['email']); ?>"
+                   value="<?$row['email'] ?>"
                    >
         </div>
         <div class="form-group">
@@ -56,11 +53,13 @@
                    class="form-control"
                    id="password"
                    name="password"
-                   value="<?php if(isset($_GET['password']))
-                       echo($_GET['password']); ?>"
-
+                   value="<?$row['password'] ?>"
             >
         </div>
+        <input type="text"
+               name="id"
+               value="<?=$row['id']?>"
+               hidden >
 
         <button type="submit"
                 class="btn btn-primary"
