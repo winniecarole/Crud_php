@@ -40,8 +40,7 @@
                 while($rows = mysqli_fetch_assoc($result)){
                     $i++;
                     ?>
-                 /*liste all user wird angezeigt
-                    */
+
                     <tr>
                         <th scope="row"><?=$i?></th>
                         <td><?=$rows['name']?></td>
@@ -66,3 +65,4 @@
 </div>
 </body>
 </html>
+?>
