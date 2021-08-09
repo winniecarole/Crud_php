@@ -8,38 +8,61 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+
 <div class="container">
     <div class="box">
-        <h4 class="display-4 text-center">Read</h4><hr><br>
-        <?php if(mysqli_stmt_num_rows($result)){
-
-        }?>
-        <table class="table table-striped">
-            <thead>
+        <h4 class="display-4 text-center">Read</h4><br>
+        <?php if (isset($_GET['success'])) { ?>
+            <div class="alert alert-success" role="alert">
+                <?php echo $_GET['success']; ?>
+            </div>
+        <?php } ?>
+        <?php if (mysqli_num_rows($result)) { ?>
+            <table class="table table-striped">
+                <thead>
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Name</th>
                     <th scope="col">Vorname</th>
-                    <th scope="col">email</th>
+                    <th scope="col">Email</th>
                     <th scope="col">password</th>
+                    <th scope="col">Action</th>
                 </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>winnie</td>
-                    <td>tets</td>
-                    <td>winnie</td>
-                    <td>tets</td>
-                </tr>
-            </tbody>
-            <div class="link-right">
-               <a href="index.php" class="link-primary">Create</a>
-            </div>
-            ...
-        </table>
-    </div>
+                </thead>
+                <tbody>
+                <?php
+                $i = 0;
+                /*
+                 * Die Funktion mysqli_fetch_assoc () akzeptiert ein Ergebnisobjekt als Parameter, ruft den Inhalt
+                 * der aktuellen Zeile im angegebenen Ergebnisobjekt ab und gibt ihn als
+                 *  assoziatives Array zurück. */
 
+                while($rows = mysqli_fetch_assoc($result)){
+                    $i++;
+                    ?>
+                 /*liste all user wird angezeigt
+                    */
+                    <tr>
+                        <th scope="row"><?=$i?></th>
+                        <td><?=$rows['name']?></td>
+                        <td><?php echo $rows['vorname']; ?></td>
+                        <td><?=$rows['email']?></td>
+                        <td><?php echo $rows['password']; ?></td>
+                        <td><a href="update.php?id=<?=$rows['id']?>"
+                               class="btn btn-success">Update</a>
+
+                            <a href="php/delete.php?id=<?=$rows['id']?>"
+                               class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <?php } ?>
+                </tbody>
+            </table>
+        <?php } ?>
+        <div class="link-right">
+            <a href="index.php" class="link-primary">Create</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
