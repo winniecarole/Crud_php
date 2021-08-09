@@ -24,7 +24,7 @@
                    name="name"
                    value="<?php if(isset($_GET['name']))
                        echo($_GET['name']); ?>"
-                   placeholder="Name eingeben">
+                  >
         </div>
         <div class="form-group">
             <label for="vorname">Vorname</label>
@@ -34,7 +34,7 @@
                    name="vorname"
                    value="<?php if(isset($_GET['vorname']))
                        echo($_GET['vorname']); ?>"
-                   placeholder="Vorname eingeben">
+                  >
         </div>
 
         <div class="form-group">
@@ -45,7 +45,7 @@
                    name="email"
                    value="<?php if(isset($_GET['email']))
                        echo($_GET['email']); ?>"
-                   placeholder="Enter email">
+                   >
         </div>
         <div class="form-group">
             <label for="password">password</label>
@@ -55,7 +55,7 @@
                    name="password"
                    value="<?php if(isset($_GET['password']))
                        echo($_GET['password']); ?>"
-                   placeholder="password eingeben"
+
             >
         </div>
 
