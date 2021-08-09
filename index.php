@@ -22,6 +22,8 @@
                    class="form-control"
                    id="name"
                    name="name"
+                   value="<?php if(isset($_GET['name']))
+                       echo($_GET['name']); ?>"
                    placeholder="Name eingeben">
         </div>
         <div class="form-group">
@@ -30,6 +32,8 @@
                    class="form-control"
                    id="vorname"
                    name="vorname"
+                   value="<?php if(isset($_GET['vorname']))
+                       echo($_GET['vorname']); ?>"
                    placeholder="Vorname eingeben">
         </div>
 
@@ -39,6 +43,8 @@
                    class="form-control"
                    id="email"
                    name="email"
+                   value="<?php if(isset($_GET['email']))
+                       echo($_GET['email']); ?>"
                    placeholder="Enter email">
         </div>
         <div class="form-group">
@@ -47,6 +53,8 @@
                    class="form-control"
                    id="password"
                    name="password"
+                   value="<?php if(isset($_GET['password']))
+                       echo($_GET['password']); ?>"
                    placeholder="password eingeben"
                   >
         </div>
