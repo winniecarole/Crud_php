@@ -1,3 +1,5 @@
+<?php include "php/read.php";?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +11,9 @@
 <div class="container">
     <div class="box">
         <h4 class="display-4 text-center">Read</h4><hr><br>
+        <?php if(mysqli_stmt_num_rows($result)){
+
+        }?>
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -28,6 +33,9 @@
                     <td>tets</td>
                 </tr>
             </tbody>
+            <div class="link-right">
+               <a href="index.php" class="link-primary">Create</a>
+            </div>
             ...
         </table>
     </div>
