@@ -7,9 +7,14 @@
 </head>
 <body>
 <div class="container">
-    <form>
+    <form action="php/create.php" method="post">
 
         <h4 class="display-4 text-center">Create</h4><hr><br>
+        <?php if (isset($_GET['error'])) { ?>
+            <div class="alert alert-danger" role="alert">
+                <?php echo $_GET['error']; ?>
+            </div>
+        <?php } ?>
 
         <div class="form-group">
             <label for="name">Name</label>
