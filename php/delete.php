@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * variable declaration wird geprüpft
+ */
 if(isset($_GET['id'])){
     include "../db_conn.php";
     function validateuser($data){
@@ -12,7 +15,9 @@ if(isset($_GET['id'])){
 
     $sql = "DELETE FROM users
 	        WHERE id=$id";
-    $result = mysqli_query($conn, $sql);
+
+    $result = mysqli_query($conn, $sql);  //envois une requete a une base de donnee
+
     if ($result) {
         header("Location: ../read.php?success=successfully deleted");
     }else {

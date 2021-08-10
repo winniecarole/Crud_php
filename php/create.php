@@ -1,7 +1,10 @@
 <?php
-
+/**
+ * varible declaration wird geprüpft
+ */
  if(isset($_POST['create'])){ //püft ob create existiert
      include "../db_conn.php";
+
      function validteuser($data){
          $data=trim($data);
          $data=stripcslashes($data); //die zu entschlüsselnde Zeichenkette
@@ -14,8 +17,9 @@
      $password=validteuser($_POST['password']);
      $user_data = 'name='.$name. '&vorname='.$vorName. '&email='.$email.'password='.$password;
 
-
-
+     /**
+      * prüft ob ein feld der Input leer ist
+      */
      if (empty($name)) {
          header("Location: ../index.php?error=Name is required&$user_data");
      }else if (empty($vorName)) {

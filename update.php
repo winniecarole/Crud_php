@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Create</title>
+    <title>Update</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -25,8 +25,7 @@
                    class="form-control"
                    id="name"
                    name="name"
-                   value="<?$row['name'] ?>"
-                  >
+                   value="<?=$row['name'] ?>" >
         </div>
         <div class="form-group">
             <label for="vorname">Vorname</label>
@@ -34,8 +33,7 @@
                    class="form-control"
                    id="vorname"
                    name="vorname"
-                   value="<?$row['vorname'] ?>"
-                  >
+                   value="<?=$row['vorname'] ?>">
         </div>
 
         <div class="form-group">
@@ -44,7 +42,7 @@
                    class="form-control"
                    id="email"
                    name="email"
-                   value="<?$row['email'] ?>"
+                   value="<?=$row['email'] ?>"
                    >
         </div>
         <div class="form-group">
@@ -53,7 +51,7 @@
                    class="form-control"
                    id="password"
                    name="password"
-                   value="<?$row['password'] ?>"
+                   value="<?=$row['password'] ?>"
             >
         </div>
         <input type="text"
@@ -63,7 +61,7 @@
 
         <button type="submit"
                 class="btn btn-primary"
-                name="create">Create</button>
+                name="update">Update</button>
         <a href="read.php" class="link-primary">View</a>
     </form>
 </div>
